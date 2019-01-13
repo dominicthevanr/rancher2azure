@@ -5,7 +5,7 @@ Deploy Rancher to Ubuntu Azure VM
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fhebertsonm%2Francher2azure%2Fmaster%2FrancherTemplate.json?token=AfbuANJfgITnPkyJIZVKqTqd68BcFlUpks5cOo4JwA%3D%3D" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fhebertsonm%2Francher2azure%2Fmaster%2FrancherTemplate.json%2Ftoken=AfbuANJfgITnPkyJIZVKqTqd68BcFlUpks5cOo4JwA%3D%3D" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
