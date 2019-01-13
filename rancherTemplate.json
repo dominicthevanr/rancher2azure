@@ -4,17 +4,105 @@
     "parameters": {
         "location": {
             "type": "string",
-            "defaultValue": "westus2"
+            "defaultValue": "[resourceGroup().location]"
+        },
+        "networkInterfaceName": {
+            "type": "string",
+            "defaultValue": ""
         },
         "networkSecurityGroupName": {
             "type": "string",
             "defaultValue": ""
-        },        
+        },
+        "networkSecurityGroupRules": {
+            "type": "array"
+        },
+        "subnetName": {
+            "type": "string",
+            "defaultValue": ""
+        },
         "virtualNetworkName": {
             "type": "string",
             "defaultValue": ""
-        },        
-        "subnetName": {
+        },
+        "addressPrefixes": {
+            "type": "array"
+        },
+        "subnets": {
+            "type": "array"
+        },
+        "publicIpAddressName": {
+            "type": "string",
+            "defaultValue": ""
+        },
+        "publicIpAddressType": {
+            "type": "string",
+            "defaultValue": ""
+        },
+        "publicIpAddressSku": {
+            "type": "string",
+            "defaultValue": ""
+        },
+        "virtualMachineName": {
+            "type": "string",
+            "defaultValue": ""
+        },
+        "virtualMachineRG": {
+            "type": "string",
+            "defaultValue": ""
+        },
+        "osDiskType": {
+            "type": "string",
+            "defaultValue": ""
+        },
+        "virtualMachineSize": {
+            "type": "string",
+            "defaultValue": ""
+        },
+        "adminUsername": {
+            "type": "string",
+            "defaultValue": ""
+        },
+        "adminPassword": {
+            "type": "secureString"
+        },
+        "customData": {
+            "type": "string",
+            "defaultValue": ""
+        },
+        "diagnosticsStorageAccountName": {
+            "type": "string",
+            "defaultValue": ""
+        },
+        "diagnosticsStorageAccountId": {
+            "type": "string",
+            "defaultValue": ""
+        },
+        "diagnosticsStorageAccountType": {
+            "type": "string",
+            "defaultValue": ""
+        },
+        "diagnosticsStorageAccountKind": {
+            "type": "string",
+            "defaultValue": ""
+        },
+        "autoShutdownStatus": {
+            "type": "string",
+            "defaultValue": ""
+        },
+        "autoShutdownTime": {
+            "type": "string",
+            "defaultValue": ""
+        },
+        "autoShutdownTimeZone": {
+            "type": "string",
+            "defaultValue": ""
+        },
+        "autoShutdownNotificationStatus": {
+            "type": "string",
+            "defaultValue": ""
+        },
+        "autoShutdownNotificationLocale": {
             "type": "string",
             "defaultValue": ""
         }
