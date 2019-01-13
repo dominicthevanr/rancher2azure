@@ -5,6 +5,18 @@
         "location": {
             "type": "string",
             "defaultValue": "westus2"
+        },
+        "networkSecurityGroupName": {
+            "type": "string",
+            "defaultValue": ""
+        },        
+        "virtualNetworkName": {
+            "type": "string",
+            "defaultValue": ""
+        },        
+        "subnetName": {
+            "type": "string",
+            "defaultValue": ""
         }
     },
     "variables": {
