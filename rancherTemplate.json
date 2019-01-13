@@ -69,23 +69,7 @@
         "nsgId": "[resourceId(resourceGroup().name, 'Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroupName'))]",
         "vnetId": "[resourceId(resourceGroup().name,'Microsoft.Network/virtualNetworks', parameters('virtualNetworkName'))]",
         "subnetRef": "[concat(variables('vnetId'), '/subnets/', parameters('subnetName'))]",
-        "autoShutdownNotificationStatus": "Disabled",
-        "networkSecurityGroupRules": '[
-          {
-            "name": "ssh_rule",
-            "properties": {
-              "description": "Locks inbound down to ssh default port 22.",
-              "protocol": "Tcp",
-              "sourcePortRange": "*",
-              "destinationPortRange": "22",
-              "sourceAddressPrefix": "*",
-              "destinationAddressPrefix": "*",
-              "access": "Allow",
-              "priority": 123,
-              "direction": "Inbound"
-            }
-          }
-        ]'
+        "autoShutdownNotificationStatus": "Disabled"
     },
     "resources": [
         {
@@ -125,7 +109,22 @@
             "apiVersion": "2018-08-01",
             "location": "[parameters('location')]",
             "properties": {
-                "securityRules": "[variable('networkSecurityGroupRules')]"
+                "securityRules": [
+                  {
+                    "name": "ssh_rule",
+                    "properties": {
+                      "description": "Locks inbound down to ssh default port 22.",
+                      "protocol": "Tcp",
+                      "sourcePortRange": "*",
+                      "destinationPortRange": "22",
+                      "sourceAddressPrefix": "*",
+                      "destinationAddressPrefix": "*",
+                      "access": "Allow",
+                      "priority": 123,
+                      "direction": "Inbound"
+                    }
+                  }
+                ]
             },
             "tags": {}
         },
