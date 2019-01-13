@@ -2,38 +2,8 @@
     "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "networkInterfaceName": {
-            "type": "string",
-            "defaultValue": ""
-        },
-        "networkSecurityGroupName": {
-            "type": "string",
-            "defaultValue": ""
-        },
-        "networkSecurityGroupRules": {
-            "type": "array"
-        },
-        "subnetName": {
-            "type": "string",
-            "defaultValue": ""
-        },
-        "virtualNetworkName": {
-            "type": "string",
-            "defaultValue": ""
-        },
-        "addressPrefixes": {
-            "type": "array"
-        },
         "subnets": {
             "type": "array"
-        },
-        "publicIpAddressName": {
-            "type": "string",
-            "defaultValue": ""
-        },
-        "publicIpAddressType": {
-            "type": "string",
-            "defaultValue": ""
         },
         "publicIpAddressSku": {
             "type": "string",
@@ -43,21 +13,13 @@
             "type": "string",
             "defaultValue": "rancher"
         },
-        "virtualMachineRG": {
-            "type": "string",
-            "defaultValue": ""
-        },
         "osDiskType": {
-            "type": "string",
-            "defaultValue": ""
-        },
-        "virtualMachineSize": {
             "type": "string",
             "defaultValue": ""
         },
         "adminUsername": {
             "type": "string",
-            "defaultValue": ""
+            "defaultValue": "rancher-admin"
         },
         "adminPassword": {
             "type": "secureString"
@@ -84,29 +46,46 @@
         },
         "autoShutdownStatus": {
             "type": "string",
-            "defaultValue": ""
+            "defaultValue": "Enabled"
         },
         "autoShutdownTime": {
             "type": "string",
-            "defaultValue": ""
+            "defaultValue": "22:00"
         },
         "autoShutdownTimeZone": {
             "type": "string",
-            "defaultValue": ""
-        },
-        "autoShutdownNotificationStatus": {
-            "type": "string",
-            "defaultValue": ""
-        },
-        "autoShutdownNotificationLocale": {
-            "type": "string",
-            "defaultValue": ""
+            "defaultValue": "Pacific Standard Time"
         }
     },
     "variables": {
+        "virtualMachineSize": "Standard_B2ms",
+        "networkInterfaceName": "[concat(resourceId(resourceGroup().name),'NIC')",
+        "networkSecurityGroupName": "networkSecurityGroup1",
+        "subnetName": "Subnet-1",
+        "virtualNetworkName": "[concat(resourceId(resourceGroup().name),'Vnet')",
+        "addressPrefix": "10.0.0.0/16",
+        "publicIPAddressName": "[concat(resourceId(resourceGroup().name),'-pip')",
+        "publicIPAddressType": "Dynamic",
         "nsgId": "[resourceId(resourceGroup().name, 'Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroupName'))]",
         "vnetId": "[resourceId(resourceGroup().name,'Microsoft.Network/virtualNetworks', parameters('virtualNetworkName'))]",
-        "subnetRef": "[concat(variables('vnetId'), '/subnets/', parameters('subnetName'))]"
+        "subnetRef": "[concat(variables('vnetId'), '/subnets/', parameters('subnetName'))]",
+        "autoShutdownNotificationStatus": "Disabled",
+        "networkSecurityGroupRules": "[
+          {
+            "name": "ssh_rule",
+            "properties": {
+              "description": "Locks inbound down to ssh default port 22.",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "22",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 123,
+              "direction": "Inbound"
+            }
+          }
+        ]"
     },
     "resources": [
         {
@@ -146,7 +125,7 @@
             "apiVersion": "2018-08-01",
             "location": "[parameters('location')]",
             "properties": {
-                "securityRules": "[parameters('networkSecurityGroupRules')]"
+                "securityRules": "[variable('networkSecurityGroupRules')]"
             },
             "tags": {}
         },
