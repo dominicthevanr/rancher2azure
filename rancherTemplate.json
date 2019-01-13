@@ -70,7 +70,7 @@
         "vnetId": "[resourceId(resourceGroup().name,'Microsoft.Network/virtualNetworks', parameters('virtualNetworkName'))]",
         "subnetRef": "[concat(variables('vnetId'), '/subnets/', parameters('subnetName'))]",
         "autoShutdownNotificationStatus": "Disabled",
-        "networkSecurityGroupRules": "[
+        "networkSecurityGroupRules": '[
           {
             "name": "ssh_rule",
             "properties": {
@@ -85,7 +85,7 @@
               "direction": "Inbound"
             }
           }
-        ]"
+        ]'
     },
     "resources": [
         {
