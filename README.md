@@ -1,11 +1,11 @@
-# rancher2azzure
+# rancher2azure
 Deploy Rancher to Ubuntu Azure VM
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2FrancherTemplate.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fhebertsonm%2Francher2azure%2Fmaster%2FrancherTemplate.json%3Ftoken=AfbuANJfgITnPkyJIZVKqTqd68BcFlUpks5cOo4JwA%3D%3D" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fhebertsonm%2Francher2azure%2Fmaster%2FrancherTemplate.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
