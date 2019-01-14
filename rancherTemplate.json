@@ -4,7 +4,7 @@
     "parameters": {
         "virtualMachineName": {
             "type": "string",
-            "defaultValue": "rancher"
+            "defaultValue": "rancher1"
         },
         "osDiskType": {
             "type": "string",
