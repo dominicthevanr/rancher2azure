@@ -111,7 +111,14 @@
                 "addressSpace": {
                     "addressPrefixes": "[variables('addressPrefix')]"
                 },
-                "subnets": "[variables('subnet')]"
+                "subnets": [
+                  {
+                    "name": "mySubnet",
+                    "properties": {
+                      "addressPrefix": "10.0.0.0/16"
+                    }
+                  }
+                ]
             },
             "tags": {}
         },
