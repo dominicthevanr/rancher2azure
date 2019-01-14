@@ -43,7 +43,7 @@
         "vnetId": "[resourceId(resourceGroup().name,'Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
         "subnetRef": "[concat(variables('vnetId'), '/subnets/', variables('subnetName'))]",
         "autoShutdownNotificationStatus": "Disabled",
-        "diagnosticsStorageAccountName": "[concat(resourceGroup().name,'diag')]"
+        "diagnosticsStorageAccountName": "[toLower(concat(resourceGroup().name,'diag'))]"
     },
     "resources": [
         {
