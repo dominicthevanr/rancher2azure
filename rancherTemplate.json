@@ -32,7 +32,7 @@
     },
     "variables": {
         "virtualMachineSize": "Standard_B2ms",
-        "networkInterfaceName": "[concat(resourceId(resourceGroup().name),'NIC')]",
+        "networkInterfaceName": "[concat(resourceGroup().name,'NIC')]",
         "networkSecurityGroupName": "networkSecurityGroup1",
         "subnetName": "Subnet-1",
         "virtualNetworkName": "[concat(resourceId(resourceGroup().name),'Vnet')]",
