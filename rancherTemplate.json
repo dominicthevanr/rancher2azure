@@ -41,7 +41,7 @@
         "publicIPAddressType": "Dynamic",
         "nsgId": "[resourceId(resourceGroup().name, 'Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]",
         "vnetId": "[resourceId(resourceGroup().name,'Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
-        "subnetRef": "[concat(variables('vnetId'), '/subnets/', parameters('subnetName'))]",
+        "subnetRef": "[concat(variables('vnetId'), '/subnets/', variables('subnetName'))]",
         "autoShutdownNotificationStatus": "Disabled",
         "diagnosticsStorageAccountName": "[concat(resourceId(resourceGroup().name),'diag')"
     },
@@ -182,9 +182,9 @@
             "apiVersion": "2018-07-01",
             "location": "[resourceGroup().location]",
             "properties": {},
-            "kind": "[parameters('diagnosticsStorageAccountKind')]",
+            "kind": "Storage (general purpose v1)",
             "sku": {
-                "name": "[parameters('diagnosticsStorageAccountType')]"
+                "name": "Standard_LRS"
             },
             "tags": {}
         },
