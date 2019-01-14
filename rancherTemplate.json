@@ -32,18 +32,18 @@
     },
     "variables": {
         "virtualMachineSize": "Standard_B2ms",
-        "networkInterfaceName": "[concat(resourceId(resourceGroup().name),'NIC')",
+        "networkInterfaceName": "[concat(resourceId(resourceGroup().name),'NIC')]",
         "networkSecurityGroupName": "networkSecurityGroup1",
         "subnetName": "Subnet-1",
-        "virtualNetworkName": "[concat(resourceId(resourceGroup().name),'Vnet')",
+        "virtualNetworkName": "[concat(resourceId(resourceGroup().name),'Vnet')]",
         "addressPrefix": "10.0.0.0/16",
-        "publicIPAddressName": "[concat(resourceId(resourceGroup().name),'-pip')",
+        "publicIPAddressName": "[concat(resourceId(resourceGroup().name),'-pip')]",
         "publicIPAddressType": "Dynamic",
         "nsgId": "[resourceId(resourceGroup().name, 'Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]",
         "vnetId": "[resourceId(resourceGroup().name,'Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
         "subnetRef": "[concat(variables('vnetId'), '/subnets/', variables('subnetName'))]",
         "autoShutdownNotificationStatus": "Disabled",
-        "diagnosticsStorageAccountName": "[concat(resourceId(resourceGroup().name),'diag')"
+        "diagnosticsStorageAccountName": "[concat(resourceId(resourceGroup().name),'diag')]"
     },
     "resources": [
         {
