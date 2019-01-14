@@ -35,15 +35,15 @@
         "networkInterfaceName": "[concat(resourceGroup().name,'NIC')]",
         "networkSecurityGroupName": "networkSecurityGroup1",
         "subnetName": "Subnet-1",
-        "virtualNetworkName": "[concat(resourceId(resourceGroup().name),'Vnet')]",
+        "virtualNetworkName": "[concat(resourceGroup().name,'Vnet')]",
         "addressPrefix": "10.0.0.0/16",
-        "publicIPAddressName": "[concat(resourceId(resourceGroup().name),'-pip')]",
+        "publicIPAddressName": "[concat(resourceGroup().name,'-pip')]",
         "publicIPAddressType": "Dynamic",
         "nsgId": "[resourceId(resourceGroup().name, 'Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]",
         "vnetId": "[resourceId(resourceGroup().name,'Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
         "subnetRef": "[concat(variables('vnetId'), '/subnets/', variables('subnetName'))]",
         "autoShutdownNotificationStatus": "Disabled",
-        "diagnosticsStorageAccountName": "[concat(resourceId(resourceGroup().name),'diag')]"
+        "diagnosticsStorageAccountName": "[concat(resourceGroup().name,'diag')]"
     },
     "resources": [
         {
