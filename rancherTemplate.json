@@ -111,7 +111,7 @@
                 "addressSpace": {
                     "addressPrefixes": "[variables('addressPrefix')]"
                 },
-                "subnets": "[variables('subnets')]"
+                "subnets": "[variables('subnet')]"
             },
             "tags": {}
         },
