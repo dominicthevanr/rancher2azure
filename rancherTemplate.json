@@ -109,7 +109,7 @@
             "location": "[resourceGroup().location]",
             "properties": {
                 "addressSpace": {
-                    "addressPrefixes": "[variables('addressPrefixes')]"
+                    "addressPrefixes": "[variables('addressPrefix')]"
                 },
                 "subnets": "[variables('subnets')]"
             },
@@ -182,7 +182,6 @@
             "apiVersion": "2018-07-01",
             "location": "[resourceGroup().location]",
             "properties": {},
-            "kind": "Storage (general purpose v1)",
             "sku": {
                 "name": "Standard_LRS"
             },
