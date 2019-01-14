@@ -17,10 +17,6 @@
         "adminPassword": {
             "type": "secureString"
         },
-        "customData": {
-            "type": "string",
-            "defaultValue": ""
-        },
         "autoShutdownStatus": {
             "type": "string",
             "defaultValue": "Enabled"
@@ -168,8 +164,7 @@
                 "osProfile": {
                     "computerName": "[parameters('virtualMachineName')]",
                     "adminUsername": "[parameters('adminUsername')]",
-                    "adminPassword": "[parameters('adminPassword')]",
-                    "customData": "[parameters('customData')]"
+                    "adminPassword": "[parameters('adminPassword')]"
                 },
                 "diagnosticsProfile": {
                     "bootDiagnostics": {
