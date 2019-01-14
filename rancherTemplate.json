@@ -2,17 +2,13 @@
     "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "publicIpAddressSku": {
-            "type": "string",
-            "defaultValue": " "
-        },
         "virtualMachineName": {
             "type": "string",
             "defaultValue": "rancher"
         },
         "osDiskType": {
             "type": "string",
-            "defaultValue": ""
+            "defaultValue": "Standard_LRS"
         },
         "adminUsername": {
             "type": "string",
@@ -22,22 +18,6 @@
             "type": "secureString"
         },
         "customData": {
-            "type": "string",
-            "defaultValue": ""
-        },
-        "diagnosticsStorageAccountName": {
-            "type": "string",
-            "defaultValue": ""
-        },
-        "diagnosticsStorageAccountId": {
-            "type": "string",
-            "defaultValue": ""
-        },
-        "diagnosticsStorageAccountType": {
-            "type": "string",
-            "defaultValue": ""
-        },
-        "diagnosticsStorageAccountKind": {
             "type": "string",
             "defaultValue": ""
         },
@@ -147,7 +127,7 @@
                 "publicIpAllocationMethod": "[parameters('publicIpAddressType')]"
             },
             "sku": {
-                "name": "[parameters('publicIpAddressSku')]"
+                "name": "Basic"
             },
             "tags": {}
         },
