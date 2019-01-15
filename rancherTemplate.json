@@ -190,7 +190,9 @@
                     }
                 },
             },
-            "resources": {
+            "tags": {}
+        },
+        "resources": {
                 "apiVersion": "2015-06-15",
                 "type": "extensions",
                 "name": "config-app",
@@ -216,8 +218,6 @@
                     }
                  }
             },
-            "tags": {}
-        },
         {
             "name": "[variables('diagnosticsStorageAccountName')]",
             "type": "Microsoft.Storage/storageAccounts",
