@@ -51,7 +51,7 @@
         "autoShutdownNotificationStatus": "Disabled",
         "diagnosticsStorageAccountName": "[toLower(concat(resourceGroup().name,'diag'))]"
     },
-    "resources": [ 
+    "resources": [
         {
             "name": "[variables('networkInterfaceName')]",
             "type": "Microsoft.Network/networkInterfaces",
@@ -188,7 +188,7 @@
                         "enabled": true,
                         "storageUri": "[concat('https://', variables('diagnosticsStorageAccountName'), '.blob.core.windows.net/')]"
                     }
-                },
+                }
             },
             "tags": {}
         },
@@ -233,5 +233,5 @@
             "type": "string",
             "value": "[parameters('adminUsername')]"
         }
-    },
+    }
 }
