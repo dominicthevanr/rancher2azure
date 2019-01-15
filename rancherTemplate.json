@@ -19,7 +19,7 @@
         },
         "dnsLabelPrefix": {
             "type": "string",
-            "defaultValue": "rancheradmin"
+            "defaultValue": "rancheradmin",
             "metadata": {
                 "description": "Unique public DNS prefix for the deployment. The fqdn will look something like '<dnsname>.westus.cloudapp.azure.com'. Up to 62 chars, digits or dashes, lowercase, should start with a letter: must conform to '^[a-z][a-z0-9-]{1,61}[a-z0-9]$'."
             }
@@ -134,7 +134,7 @@
             "apiVersion": "2018-08-01",
             "location": "[resourceGroup().location]",
             "properties": {
-                "publicIpAllocationMethod": "[variables('publicIpAddressType')]"
+                "publicIpAllocationMethod": "[variables('publicIpAddressType')]",
                 "dnsSettings": {
                     "domainNameLabel": "[parameters('dnsLabelPrefix')]"
                 }
