@@ -214,6 +214,7 @@
                         "commandToExecute": "[concat('sudo sh config-music.sh ',variables('musicStoreSqlName'), ' ', parameters('adminUsername'), ' ', parameters('sqlAdminPassword'))]"
                     }
                 }
+                }
             },
             "tags": {}
         },
