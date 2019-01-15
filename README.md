@@ -4,4 +4,13 @@
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
-This template allows you to deploy a Rancher on Ubuntu VM to Azure using the latest patched version. This will deploy a B1s size VM in the resource group location and return the fully qualified domain name of the VM.
+This template allows you to deploy a Rancher on Linux Ubuntu VM to Azure using the latest patched version. This will deploy a B2s size VM in the resource group location and return the fully qualified domain name of the VM.
+
+This deployment includes:
+* Virtual Machine
+    * user
+    * password
+    * machine size
+    * auto-shutdown
+    * DNS
+    * network
