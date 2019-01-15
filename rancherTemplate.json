@@ -100,7 +100,7 @@
                       "sourceAddressPrefix": "*",
                       "destinationAddressPrefix": "*",
                       "access": "Allow",
-                      "priority": 123,
+                      "priority": 120,
                       "direction": "Inbound"
                     }
 		  },
