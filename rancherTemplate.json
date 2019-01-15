@@ -195,7 +195,7 @@
                     "name": "config-app",
                     "location": "[resourceGroup().location]",
                     "dependsOn": [
-                        "[concat('Microsoft.Compute/virtualMachines/', concat(variables('vmName'),copyindex()))]"
+                        "[concat('Microsoft.Compute/virtualMachines/', concat(resourceGroup().name,copyindex()))]"
                     ],
                     "tags": {
                         "displayName": "config-app"
@@ -207,11 +207,11 @@
                         "autoUpgradeMinorVersion": true,
                         "settings": {
                           "fileUris": [
-                            "https://raw.githubusercontent.com/Microsoft/dotnet-core-sample-templates/master/dotnet-core-music-linux/scripts/config-music.sh"
+                            "https://raw.githubusercontent.com/hebertsonm/rancher2azure/master/rancher.sh"
                           ]
                         },
                     "protectedSettings": {
-                        "commandToExecute": "[concat('sudo sh config-music.sh ',variables('musicStoreSqlName'), ' ', parameters('adminUsername'), ' ', parameters('sqlAdminPassword'))]"
+                        "commandToExecute": "bash rancher.sh"
                     }
                 }
                 }
