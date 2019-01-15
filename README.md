@@ -15,7 +15,6 @@ This deployment includes:
     
 * Network
     * DNS
-    * network
     * Http and Https set for inbound
     
 * Container
