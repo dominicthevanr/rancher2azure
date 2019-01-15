@@ -193,6 +193,31 @@
             "tags": {}
         },
         {
+              "name": "config-app",
+              "type": "extensions",
+              "location": "[resourceGroup().location]",
+              "apiVersion": "2015-06-15",
+              "dependsOn": [
+                "[concat('Microsoft.Compute/virtualMachines/', concat(resourceGroup().name,copyindex()))]"
+              ],
+              "tags": {
+                "displayName": "config-app"
+              },
+              "properties": {
+                "publisher": "Microsoft.Azure.Extensions",
+                "type": "CustomScript",
+                "typeHandlerVersion": "2.0",
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                  },
+                "protectedSettings": {
+                  "commandToExecute": "bash rancher.sh",
+                  "fileUris": ["https://raw.githubusercontent.com/hebertsonm/rancher2azure/master/rancher.sh"
+                  ]  
+                }
+              }
+            },
+        {
             "name": "[variables('diagnosticsStorageAccountName')]",
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2018-07-01",
