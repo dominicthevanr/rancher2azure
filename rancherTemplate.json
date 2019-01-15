@@ -31,7 +31,7 @@
         }
     },
     "variables": {
-        "virtualMachineSize": "Standard_B2ms",
+        "virtualMachineSize": "Standard_B2s",
         "networkInterfaceName": "[concat(resourceGroup().name,'NIC')]",
         "networkSecurityGroupName": "networkSecurityGroup1",
         "subnetName": "Subnet-1",
