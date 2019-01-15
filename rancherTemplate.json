@@ -210,8 +210,8 @@
                 "timeZoneId": "[parameters('autoShutdownTimeZone')]",
                 "targetResourceId": "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachineName'))]",
                 "notificationSettings": {
-                    "status": "[parameters('autoShutdownNotificationStatus')]",
-                    "notificationLocale": "[parameters('autoShutdownNotificationLocale')]",
+                    "status": "[variables('autoShutdownNotificationStatus')]",
+                    "notificationLocale": "[resourceGroup().location]",
                     "timeInMinutes": "30"
                 }
             },
