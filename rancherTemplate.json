@@ -105,12 +105,26 @@
                     }
 		  },
 		  {
-                    "name": "rancher_rule",
+                    "name": "rancher_https",
                     "properties": {
                       "description": "Locks inbound down to http and https ports",
                       "protocol": "Tcp",
                       "sourcePortRange": "*",
-                      "destinationPortRange": ["80","443"],
+                      "destinationPortRange": "443",
+                      "sourceAddressPrefix": "*",
+                      "destinationAddressPrefix": "*",
+                      "access": "Allow",
+                      "priority": 123,
+                      "direction": "Inbound"
+                    }
+                  },			
+		  {
+                    "name": "rancher_http",
+                    "properties": {
+                      "description": "Locks inbound down to http and https ports",
+                      "protocol": "Tcp",
+                      "sourcePortRange": "*",
+                      "destinationPortRange": "80",
                       "sourceAddressPrefix": "*",
                       "destinationAddressPrefix": "*",
                       "access": "Allow",
