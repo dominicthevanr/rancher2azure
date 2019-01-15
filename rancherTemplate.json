@@ -51,32 +51,7 @@
         "autoShutdownNotificationStatus": "Disabled",
         "diagnosticsStorageAccountName": "[toLower(concat(resourceGroup().name,'diag'))]"
     },
-    "resources": [ {
-        "apiVersion": "2015-06-15",
-        "type": "extensions",
-        "name": "config-app",
-        "location": "[resourceGroup().location]",
-        "dependsOn": [
-            "[concat('Microsoft.Compute/virtualMachines/', parameters('virtualMachineName'))]"
-        ],
-        "tags": {
-            "displayName": "config-app"
-        },
-        "properties": {
-            "publisher": "Microsoft.Azure.Extensions",
-            "type": "CustomScript",
-            "typeHandlerVersion": "2.0",
-            "autoUpgradeMinorVersion": true,
-            "settings": {
-              "fileUris": [
-                "https://raw.githubusercontent.com/hebertsonm/rancher2azure/master/rancher.sh"
-              ]
-            },
-            "protectedSettings": {
-              "commandToExecute": "bash rancher.sh"
-            }
-         }
-        },
+    "resources": [ 
         {
             "name": "[variables('networkInterfaceName')]",
             "type": "Microsoft.Network/networkInterfaces",
