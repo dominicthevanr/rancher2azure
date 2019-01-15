@@ -12,5 +12,13 @@ This deployment includes:
     * password
     * machine size
     * auto-shutdown
+    
+* Network
     * DNS
     * network
+    * Http and Https set for inbound
+    
+* Container
+    * docker-ce=17.03.2~ce-0~ubuntu-xenial
+    * Rancher
+    * Certificate LetsEncrypt
