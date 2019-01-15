@@ -102,6 +102,19 @@
                       "access": "Allow",
                       "priority": 123,
                       "direction": "Inbound"
+                    },
+		    {
+                    "name": "rancher_rule",
+                    "properties": {
+                      "description": "Locks inbound down to http and https ports",
+                      "protocol": "Tcp",
+                      "sourcePortRange": "*",
+                      "destinationPortRange": "80,443",
+                      "sourceAddressPrefix": "*",
+                      "destinationAddressPrefix": "*",
+                      "access": "Allow",
+                      "priority": 123,
+                      "direction": "Inbound"
                     }
                   }
                 ]
