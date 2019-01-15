@@ -110,7 +110,7 @@
                       "description": "Locks inbound down to http and https ports",
                       "protocol": "Tcp",
                       "sourcePortRange": "*",
-                      "destinationPortRange": ,
+                      "destinationPortRange": ["80","443"],
                       "sourceAddressPrefix": "*",
                       "destinationAddressPrefix": "*",
                       "access": "Allow",
