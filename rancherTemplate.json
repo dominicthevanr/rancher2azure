@@ -24,6 +24,10 @@
                 "description": "Unique public DNS prefix for the deployment. The fqdn will look something like '<dnsname>.westus.cloudapp.azure.com'. Up to 62 chars, digits or dashes, lowercase, should start with a letter: must conform to '^[a-z][a-z0-9-]{1,61}[a-z0-9]$'."
             }
         },
+        "diagnosticsStorageAccountName": {
+            "type": "string",
+            "defaultValue": "[toLower(concat(resourceGroup().name,'diag000'))]"
+        },
         "autoShutdownStatus": {
             "type": "string",
             "defaultValue": "Enabled"
@@ -48,8 +52,7 @@
         "nsgId": "[resourceId(resourceGroup().name, 'Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]",
         "vnetId": "[resourceId(resourceGroup().name,'Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
         "subnetRef": "[concat(variables('vnetId'), '/subnets/', variables('subnetName'))]",
-        "autoShutdownNotificationStatus": "Disabled",
-        "diagnosticsStorageAccountName": "[toLower(concat(resourceGroup().name,'diag'))]"
+        "autoShutdownNotificationStatus": "Disabled"
     },
     "resources": [
         {
